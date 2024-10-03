@@ -1,11 +1,7 @@
-import { defineStore } from "pinia";
-import { ref, computed } from "vue";
-
 export interface Sticker {
   id: number;
   text: string;
 }
-
 export const useStickerStore = defineStore("stickerStore", () => {
   const stickers = ref<Sticker[]>([]);
 
@@ -38,3 +34,4 @@ export const useStickerStore = defineStore("stickerStore", () => {
     editSticker,
   };
 });
+
