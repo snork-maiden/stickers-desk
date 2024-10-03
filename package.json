@@ -14,5 +14,8 @@
     "vue": "latest",
     "vue-router": "latest",
     "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.79.4"
   }
 }
