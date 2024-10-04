@@ -13,7 +13,6 @@ useHead({
 
 <style scoped lang="scss">
 .not-found-container {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,20 +20,19 @@ useHead({
 }
 
 .not-found-message {
-  position: relative;
-  font-size: 3.3rem;
+  font-size: clamp(3rem, 7vw, 4rem);
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   &::before {
     content: "404";
     position: absolute;
-    top: 0%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: min(40vw, 30rem);
+    font-size: Min(55vw, 30rem);
     font-weight: 800;
-    color: rgba(65, 157, 160, 0.07);
+    color: rgba(65, 157, 160, 0.1);
     z-index: 0;
     pointer-events: none;
     user-select: none;

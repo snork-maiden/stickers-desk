@@ -23,9 +23,6 @@ function addCard(text: string) {
 </script>
 
 <style scoped lang="scss">
-.card {
-  height: 400px;
-}
 .add-button {
   width: 100%;
   background: none;
@@ -40,7 +37,7 @@ function addCard(text: string) {
   transition: transform 0.6s;
 
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.4);
 
   }
 }

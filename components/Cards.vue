@@ -25,8 +25,4 @@ const store = useStickerStore();
   padding: 0;
   justify-content: center;
 }
-
-.card {
-  aspect-ratio: 1/1;
-}
 </style>

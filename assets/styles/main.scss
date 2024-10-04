@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-bg: #edf1f5;
+  --color-text: #333333;
+  --color-link: #3498db;
+  --color-card-bg: #ffffff;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+}
+
 *,
 *::before,
 *::after {
@@ -11,7 +20,8 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
-  background-color: #f8f9fa;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -42,10 +52,9 @@ button {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: var(--color-card-bg);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--color-shadow);
   text-align: center;
   max-width: 400px;
   min-width: 300px;
@@ -53,10 +62,11 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 1/1;
 }
 
 .link {
-  color: #3498db;
+  color: var(--color-link);
   text-decoration: none;
   font-weight: 600;
 

@@ -1,7 +1,7 @@
 <template>
   <ul class="cards-list">
     <AddButton />
-    <SettingsCard
+    <SettingsCardsItem
       v-for="card of store.getStickers"
       :key="card.id"
       :id="card.id"
