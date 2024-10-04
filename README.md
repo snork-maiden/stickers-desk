@@ -1,7 +1,17 @@
-# Nuxt 3 Minimal Starter
+# Sticky Note Board 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+### Features
+- **Add, Edit, Delete Notes**: Users can manage their notes with add, edit, and delete functionality.
+- **LocalStorage Persistence**: All notes are saved to `localStorage` to persist across sessions.
+
+### Stack
+- **Nuxt 3**
+- **Vue 3**
+- **Pinia**
+- **SCSS**
+- **TypeScript**
+  
 ## Setup
 
 Make sure to install the dependencies:
@@ -71,5 +81,3 @@ yarn preview
 # bun
 bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
