@@ -1,8 +1,8 @@
 <template>
   <li class="card">
-    <div v-if="!isEditing">
-      <button @click="isEditing = true">Редактировать</button>
-      <button @click="store.deleteSticker(id)">Удалить</button>
+    <div v-if="!isEditing" class="wrapper">
+      <button @click="isEditing = true"><IconEdit /></button>
+      <button @click="store.deleteSticker(id)"><IconCancel/></button>
       <p class="text">
         {{ text }}
       </p>
@@ -10,7 +10,7 @@
     <EditingCard
       v-if="isEditing"
       @cancel="isEditing = false"
-      @confirm="(text) => editCard(text)"
+      @confirm="(text:string) => editCard(text)"
       :text="text"
     />
   </li>
@@ -45,7 +45,12 @@ function editCard(newText: string) {
   justify-content: center;
 }
 
+.wrapper {
+  overflow-y: auto;
+  word-break: break-all;
+}
+
 .card {
-  aspect-ratio: 1/1;
+  height: 300px;
 }
 </style>

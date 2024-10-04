@@ -11,9 +11,9 @@
       class="button"
       :disabled="!newCardText.length"
     >
-      Сохранить
+      <IconConfirm />
     </button>
-    <button @click="$emit('cancel')" class="button">Отменить</button>
+    <button @click="$emit('cancel')" class="button"><IconCancel /></button>
   </div>
 </template>
 
@@ -37,7 +37,7 @@ onMounted(() => {
 <style scoped lang="scss">
 .card-textarea {
   width: 100%;
-  height: 85%;
+  height: 100%;
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;

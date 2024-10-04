@@ -1,7 +1,9 @@
 <template>
   <header class="header">
-    <nuxt-link to="/" class="logo-link"> лого </nuxt-link>
-    <nuxt-link to="/settings" class="settings-link"> настройки </nuxt-link>
+    <nuxt-link to="/" class="button"> <IconLogo /> </nuxt-link>
+    <nuxt-link to="/settings" class="button">
+      <IconSettings />
+    </nuxt-link>
   </header>
 </template>
 

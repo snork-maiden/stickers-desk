@@ -6,7 +6,7 @@
     <EditingCard
       v-else
       @cancel="isEditing = false"
-      @confirm="(text) => addCard(text)"
+      @confirm="(text:string) => addCard(text)"
     />
   </li>
 </template>

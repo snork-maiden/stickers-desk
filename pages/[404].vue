@@ -2,6 +2,7 @@
   <main class="not-found-container">
     <div class="not-found-message">Страница не найдена</div>
   </main>
+  <IconCards/>
 </template>
 
 <style scoped lang="scss">
@@ -28,10 +29,12 @@
     transform: translate(-50%, -50%);
     font-size: min(40vw, 30rem);
     font-weight: 800;
-    color: rgba(65, 157, 160, 0.05);
+    color: rgba(65, 157, 160, 0.07);
     z-index: 0;
     pointer-events: none;
     user-select: none;
   }
 }
+
+
 </style>
