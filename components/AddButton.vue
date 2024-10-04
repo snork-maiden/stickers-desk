@@ -31,12 +31,18 @@ function addCard(text: string) {
   background: none;
   border: none;
   cursor: pointer;
-  font-size: min(40vw, 25rem);
+  font-size: 400px;
   transform: scale(1.3);
   padding: 0;
   line-height: 1;
   font-weight: 300;
-  color: rgba(65, 157, 160, 0.15);
+  color: rgba(65, 157, 160, 0.12);
+  transition: transform 0.6s;
+
+  &:hover {
+    transform: scale(1.5);
+
+  }
 }
 
 .card-textarea {

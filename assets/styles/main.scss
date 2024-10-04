@@ -12,12 +12,17 @@ body {
   font-style: normal;
   font-size: 16px;
   background-color: #f8f9fa;
-  min-height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
 }
 
 button,
@@ -48,7 +53,6 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  word-break: break-all;
 }
 
 .link {
@@ -62,10 +66,18 @@ button {
 }
 
 .button {
-  padding: 0.1em;
-  transition: transform 0.3s;
-  :hover,
+  transition: transform 0.3s ease;
+  &:hover,
   :active {
     transform: scale(1.05);
+  }
+
+  &:disabled {
+    filter: saturate(0);
+    cursor: default;
+    &:hover,
+    &:active {
+      transform: none;
+    }
   }
 }

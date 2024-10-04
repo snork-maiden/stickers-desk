@@ -1,8 +1,12 @@
 <template>
   <li class="card">
     <div v-if="!isEditing" class="wrapper">
-      <button @click="isEditing = true"><IconEdit /></button>
-      <button @click="store.deleteSticker(id)"><IconCancel/></button>
+      <div class="buttons">
+        <button @click="isEditing = true" class="button"><IconEdit /></button>
+        <button @click="store.deleteSticker(id)" class="button">
+          <IconDelete />
+        </button>
+      </div>
       <p class="text">
         {{ text }}
       </p>
@@ -32,25 +36,19 @@ function editCard(newText: string) {
 </script>
 
 <style scoped lang="scss">
-.cards {
-  display: grid;
-  place-items: center;
-}
-
-.cards-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  padding: 0;
-  justify-content: center;
-}
-
 .wrapper {
-  overflow-y: auto;
   word-break: break-all;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  width: 100%;
+}
+.text {
+  margin: auto;
 }
 
-.card {
-  height: 300px;
+.buttons {
+  display: flex;
+  justify-content: space-between;
 }
 </style>

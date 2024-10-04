@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1em 0;
   background-color: #f8f9fa;
 }
 </style>

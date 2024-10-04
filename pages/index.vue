@@ -17,11 +17,9 @@ const { isStickers } = storeToRefs(useStickerStore());
 
 <style scoped lang="scss">
 .container {
+  margin-top: clamp(1.5em, 7vw, 4em);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  max-width: 90vw;
-  margin: 0 auto;
 }
 </style>
