@@ -8,9 +8,10 @@
         v-model="newCardText"
         class="card-textarea"
         placeholder="Введите текст..."
+        ref="textarea"
       ></textarea>
       <div class="button-group">
-        <button @click="confirmCard" class="button">Добавить</button>
+        <button @click="addCard" class="button">Добавить</button>
         <button @click="isEditing = false" class="button">Отменить</button>
       </div>
     </template>
@@ -18,19 +19,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-const store = useStickerStore()
+import { ref, watch } from "vue";
+const store = useStickerStore();
 
 const isEditing = ref(false);
 const newCardText = ref("");
+const textarea = useTemplateRef("textarea");
 
-const confirmCard = () => {
+function addCard() {
   store.addSticker(newCardText.value);
   isEditing.value = false;
-};
+}
 
 watch(isEditing, (value) => {
-  if ((value = false)) {
+  if (value) {
+    nextTick(() => {
+      textarea.value!.focus();
+    });
+  } else {
     newCardText.value = "";
   }
 });

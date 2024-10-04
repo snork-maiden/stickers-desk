@@ -4,12 +4,14 @@ const { isStickers } = storeToRefs(useStickerStore());
 
 <template>
   <main class="container">
-    <p class="card" v-if="!isStickers">
-      Перейдите в
-      <NuxtLink to="/settings" class="link">настройки</NuxtLink>, чтобы добавить
-      первую карточку
-    </p>
-    <CardsDisplay v-else />
+    <div class="card" v-if="!isStickers">
+      <p>
+        Перейдите в
+        <NuxtLink to="/settings" class="link">настройки</NuxtLink>, чтобы
+        добавить первую карточку
+      </p>
+    </div>
+    <Cards v-else />
   </main>
 </template>
 
@@ -19,5 +21,7 @@ const { isStickers } = storeToRefs(useStickerStore());
   justify-content: center;
   align-items: center;
   height: 80vh;
+  max-width: 90vw;
+  margin: 0 auto;
 }
 </style>
