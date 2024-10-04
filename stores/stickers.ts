@@ -14,7 +14,12 @@ export const useStickerStore = defineStore("stickerStore", () => {
       text,
     });
   }
-
+  function getTextById(id: number) {
+    const sticker = stickers.value.find((sticker) => sticker.id === id);
+    if (sticker) {
+      return sticker.text;
+    }
+  }
   function deleteSticker(id: number) {
     stickers.value = stickers.value.filter((sticker) => sticker.id !== id);
   }
@@ -32,6 +37,6 @@ export const useStickerStore = defineStore("stickerStore", () => {
     addSticker,
     deleteSticker,
     editSticker,
+    getTextById
   };
 });
-

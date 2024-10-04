@@ -2,11 +2,15 @@
   <main class="main">
     <Breadcrumb />
     <section class="cards">
-      <p v-if="!isStickers" class="no-cards-warning">
+      <p v-if="!store.isStickers" class="no-cards-warning">
         Добавьте свой первый стикер
       </p>
       <ul class="cards-list">
-        
+        <SettingsCard
+          v-for="card of store.getStickers"
+          :key="card.id"
+          :id="card.id"
+        />
         <AddButton />
       </ul>
     </section>
@@ -14,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-const { isStickers } = storeToRefs(useStickerStore());
+const store = useStickerStore();
 </script>
 
 <style scoped lang="scss">
@@ -27,6 +31,7 @@ const { isStickers } = storeToRefs(useStickerStore());
 .cards-list {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 2em;

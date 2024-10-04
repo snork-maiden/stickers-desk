@@ -1,45 +1,25 @@
 <template>
-  <div class="card">
+  <li class="card">
     <button class="add-button" v-if="!isEditing" @click="isEditing = true">
       +
     </button>
-    <template v-else>
-      <textarea
-        v-model="newCardText"
-        class="card-textarea"
-        placeholder="Введите текст..."
-        ref="textarea"
-      ></textarea>
-      <div class="button-group">
-        <button @click="addCard" class="button">Добавить</button>
-        <button @click="isEditing = false" class="button">Отменить</button>
-      </div>
-    </template>
-  </div>
+    <EditingCard
+      v-else
+      @cancel="isEditing = false"
+      @confirm="(text) => addCard(text)"
+    />
+  </li>
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from "vue";
 const store = useStickerStore();
 
 const isEditing = ref(false);
-const newCardText = ref("");
-const textarea = useTemplateRef("textarea");
 
-function addCard() {
-  store.addSticker(newCardText.value);
+function addCard(text: string) {
+  store.addSticker(text);
   isEditing.value = false;
 }
-
-watch(isEditing, (value) => {
-  if (value) {
-    nextTick(() => {
-      textarea.value!.focus();
-    });
-  } else {
-    newCardText.value = "";
-  }
-});
 </script>
 
 <style scoped lang="scss">
