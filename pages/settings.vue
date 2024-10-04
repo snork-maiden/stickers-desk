@@ -12,6 +12,11 @@
 
 <script setup lang="ts">
 const store = useStickerStore();
+
+useHead({
+  title: 'Управление стикерами'
+})
+
 </script>
 
 <style scoped lang="scss">

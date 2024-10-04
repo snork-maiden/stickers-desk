@@ -2,8 +2,14 @@
   <main class="not-found-container">
     <div class="not-found-message">Страница не найдена</div>
   </main>
-  <IconCards/>
 </template>
+
+<script setup>
+useHead({
+  title: 'Страница не найдена'
+})
+
+</script>
 
 <style scoped lang="scss">
 .not-found-container {
@@ -20,7 +26,6 @@
   font-weight: 500;
   text-transform: uppercase;
   text-align: center;
-  color: #333;
   &::before {
     content: "404";
     position: absolute;
@@ -35,6 +40,4 @@
     user-select: none;
   }
 }
-
-
 </style>

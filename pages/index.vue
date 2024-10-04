@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-const { isStickers } = storeToRefs(useStickerStore());
-</script>
-
 <template>
   <main class="container">
     <div class="card" v-if="!isStickers">
@@ -14,6 +10,13 @@ const { isStickers } = storeToRefs(useStickerStore());
     <Cards v-else />
   </main>
 </template>
+
+<script lang="ts" setup>
+const { isStickers } = storeToRefs(useStickerStore());
+useHead({
+  title: "Мои стикеры",
+});
+</script>
 
 <style scoped lang="scss">
 .container {
