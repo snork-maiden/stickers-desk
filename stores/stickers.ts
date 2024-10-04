@@ -1,9 +1,9 @@
-interface Sticker {
+export interface Sticker {
   id: number;
   text: string;
 }
 export const useStickerStore = defineStore("stickerStore", () => {
-  const stickers = ref<Sticker[]>(loadStickersFromLocalStorage());
+  const stickers = ref<Sticker[]>([]);
 
   const isStickers = computed(() => !!stickers.value.length);
   const getStickers = computed(() => stickers.value);
@@ -31,6 +31,10 @@ export const useStickerStore = defineStore("stickerStore", () => {
     }
   }
 
+  function setStickers(newStickers: Sticker[]) {
+  stickers.value = newStickers
+  }
+
   watch(
     stickers,
     (newValue) => {
@@ -46,6 +50,7 @@ export const useStickerStore = defineStore("stickerStore", () => {
     deleteSticker,
     editSticker,
     getTextById,
+    setStickers
   };
 });
 
@@ -53,7 +58,3 @@ function saveStickersToLocalStorage(stickers: Sticker[]) {
   localStorage.setItem("stickers", JSON.stringify(stickers));
 }
 
-function loadStickersFromLocalStorage(): Sticker[] {
-  const storedStickers = localStorage.getItem("stickers");
-  return storedStickers ? JSON.parse(storedStickers) : [];
-}
